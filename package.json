@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "build:func": "yarn --cwd functions build",
+    "deploy:func": "firebase deploy --only functions"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "dependencies": {
+    "firebase-tools": "^7.15.0"
+  },
+  "workspaces": {
+    "packages": [
+      "functions"
+    ],
+    "nohoist": [
+      "**/firebase-admin",
+      "**/firebase-admin/**",
+      "**/firebase-functions",
+      "**/firebase-functions/**"
+    ]
+  }
+}
